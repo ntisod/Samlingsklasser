@@ -43,6 +43,30 @@ namespace Samlingsklasser
             {
                 Console.WriteLine("Tal: {0}", tal);
             }
+            
+            //Skapa en lista av double
+            List<double> dLista = new List<double>();
+
+            //Lägg till flera tal samtidigt genom att använda en Array med värden
+            dLista.AddRange(new double[] { 3.2, 5.1, 13, 7.4, 8.2, 2.8, 14.1 });
+
+            //Skriv ut lite information om innehållet i listan
+            Console.WriteLine("Summan av alla element: " + dLista.Sum());
+            Console.WriteLine("Medelvärdet: " + dLista.Average().ToString("0.00"));
+            Console.WriteLine("Största värdet: " + dLista.Max());
+            Console.WriteLine("Minsta värdet: " + dLista.Min());
+
+            //Vilket index hade det minsta värdet...?
+            Console.WriteLine("Minsta värdet fanns på index: " + dLista.IndexOf(dLista.Min()));
+
+            //Sortera listan
+            dLista.Sort();
+
+            foreach (double d in dLista)
+            {
+                Console.WriteLine("Värde: " + d);
+            }
+
 
             Console.ReadKey();
         }
