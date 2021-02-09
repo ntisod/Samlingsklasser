@@ -13,6 +13,8 @@ namespace Samlingsklasser
             //Skriv ut menyalternativ
             Console.WriteLine("1. integer-lista.");
             Console.WriteLine("2. double-lista.");
+            Console.WriteLine("3. Dictionary-exempel.");
+            Console.WriteLine("4. Tärningskast med Dictionary.");
 
             //Läs in menyval
             Console.Write("Ange siffra för vad du vill göra: ");
@@ -26,12 +28,68 @@ namespace Samlingsklasser
                 case "2":
                     DoubleLista();
                     break;
+                case "3":
+                    DictionaryExempel();
+                    break;
+                case "4":
+                    DiceDictionary();
+                    break;
             }
 
 
 
 
             Console.ReadKey();
+        }
+
+        static void DictionaryExempel()
+        {
+            //Skapa en dictionary med string som nyckel och int som värde
+            Dictionary<string, int> personer = new Dictionary<string, int>();
+
+            //Lägg till
+            personer.Add("Kalle", 10);
+            personer.Add("Sven", 12);
+            personer.Add("Oskar", 10);
+            personer.Add("Viggo", 13);
+
+            Console.WriteLine("Kalles ålder är: " + personer["Kalle"]);
+
+            //"Iterera" genom samlingen
+            foreach (KeyValuePair<string, int> kvp in personer)
+            {
+                Console.WriteLine("Nyckel: {0} Värde: {1}", kvp.Key, kvp.Value);
+            }
+        }
+
+        static void DiceDictionary()
+        {
+            //Skapa en dictionary med int som nyckel och int som värde
+            Dictionary<int, int> resultat = new Dictionary<int, int>();
+
+            //skapa ett Random objekt för att slumpa
+            Random random = new Random();
+
+            //Gör tusen upprepnigar
+            for (int i = 0; i < 1000; i++)
+            {
+                //Slumpa tal mellan 1 och 6
+                int tal = random.Next(1, 7);
+
+                //Lägg nyckel om denna inte redan finns
+                if (!resultat.ContainsKey(tal))
+                    resultat.Add(tal, 0);
+
+                //Öka förekomsten av tal
+                resultat[tal]++;
+            }
+
+            //Visa resultatet
+            foreach (KeyValuePair<int, int> kvp in resultat)
+            {
+                Console.WriteLine("Nyckel: {0} Värde: {1}", kvp.Key, kvp.Value);
+            }
+
         }
 
         static void IntegerLista()
