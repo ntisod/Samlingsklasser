@@ -15,6 +15,7 @@ namespace Samlingsklasser
             Console.WriteLine("2. double-lista.");
             Console.WriteLine("3. Dictionary-exempel.");
             Console.WriteLine("4. Tärningskast med Dictionary.");
+            Console.WriteLine("5. Tärningskast med SortedList (Övning 1).");
 
             //Läs in menyval
             Console.Write("Ange siffra för vad du vill göra: ");
@@ -34,10 +35,10 @@ namespace Samlingsklasser
                 case "4":
                     DiceDictionary();
                     break;
+                case "5":
+                    DiceSortedList();
+                    break;
             }
-
-
-
 
             Console.ReadKey();
         }
@@ -60,6 +61,12 @@ namespace Samlingsklasser
             {
                 Console.WriteLine("Nyckel: {0} Värde: {1}", kvp.Key, kvp.Value);
             }
+        }
+
+        static void DiceSortedList()
+        {
+            //Övning 1
+
         }
 
         static void DiceDictionary()
@@ -90,6 +97,50 @@ namespace Samlingsklasser
                 Console.WriteLine("Nyckel: {0} Värde: {1}", kvp.Key, kvp.Value);
             }
 
+        }
+
+        static void QueueExempel()
+        {
+                Queue<string> nummer = new Queue<string>();
+                nummer.Enqueue("ett");
+                nummer.Enqueue("två");
+                nummer.Enqueue("tre");
+                nummer.Enqueue("fyra");
+                nummer.Enqueue("fem");
+
+                // "Iteration" utan att ändra innehållet i kön
+                foreach (string number in nummer)
+                {
+                    Console.WriteLine(number);
+                }
+
+                // "Iteration" samtidigt som kön töms
+                while (nummer.Count > 0)
+                {
+                    Console.WriteLine(nummer.Dequeue());
+                }
+        }
+
+        static void StackExempel()
+        {
+            Stack<string> nummer = new Stack<string>();
+            nummer.Push("ett");
+            nummer.Push("två");
+            nummer.Push("tre");
+            nummer.Push("fyra");
+            nummer.Push("fem");
+
+            // "Iteration" utan att ändra innehållet i stacken
+            foreach (string number in nummer)
+            {
+                Console.WriteLine(number);
+            }
+
+            // "Iteration" samtidigt som stacken töms
+            while (nummer.Count > 0)
+            {
+                Console.WriteLine(nummer.Pop());
+            }
         }
 
         static void IntegerLista()
