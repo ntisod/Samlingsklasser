@@ -16,6 +16,8 @@ namespace Samlingsklasser
             Console.WriteLine("3. Dictionary-exempel.");
             Console.WriteLine("4. Tärningskast med Dictionary.");
             Console.WriteLine("5. Tärningskast med SortedList (Övning 1).");
+            Console.WriteLine("6. Queue-exempel.");
+            Console.WriteLine("7. Stack-exempel.");
 
             //Läs in menyval
             Console.Write("Ange siffra för vad du vill göra: ");
@@ -37,6 +39,12 @@ namespace Samlingsklasser
                     break;
                 case "5":
                     DiceSortedList();
+                    break;
+                case "6":
+                    QueueExempel();
+                    break;
+                case "7":
+                    StackExempel();
                     break;
             }
 
