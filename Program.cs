@@ -10,6 +10,32 @@ namespace Samlingsklasser
     {
         static void Main(string[] args)
         {
+            //Skriv ut menyalternativ
+            Console.WriteLine("1. integer-lista.");
+            Console.WriteLine("2. double-lista.");
+
+            //Läs in menyval
+            Console.Write("Ange siffra för vad du vill göra: ");
+            string val = Console.ReadLine();
+
+            //Använd en switch-sats för att anropa den metod som hör ihop med menyvalet.
+            switch(val){
+                case "1":
+                    IntegerLista();
+                    break;
+                case "2":
+                    DoubleLista();
+                    break;
+            }
+
+
+
+
+            Console.ReadKey();
+        }
+
+        static void IntegerLista()
+        {
             //Skapa en lista av int
             List<int> lista = new List<int>();
 
@@ -43,7 +69,10 @@ namespace Samlingsklasser
             {
                 Console.WriteLine("Tal: {0}", tal);
             }
-            
+        }
+
+        static void DoubleLista()
+        {
             //Skapa en lista av double
             List<double> dLista = new List<double>();
 
@@ -67,8 +96,6 @@ namespace Samlingsklasser
                 Console.WriteLine("Värde: " + d);
             }
 
-
-            Console.ReadKey();
         }
     }
 }
